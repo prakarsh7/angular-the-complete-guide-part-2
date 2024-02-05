@@ -11,3 +11,25 @@
 - _imports_ array allow us to add more Modules in our app, so that we can split up our app in multiple modules
 - **BrowserModule** provides us with all the basic functionalities we need to start our app
 - Standalone components can reduce the amount of boilerplate code you have to write - after all, you don't have to add and manage those extra @NgModules anymore. (Separate Section in course to understand this)
+- We can use the CLI to create new component by using the command:
+    - `ng generate component componentName` OR `ng g c componentName`
+    - This will create a folder with the name _componentName_ containing following files:
+        - **componentName.component.ts**
+        - **componentName.component.html**
+        - **componentName.component.css**
+        - **componentName.component.spec.ts** -> This is used for Unit Testing
+    - This will also add the component to the _declaration_ array in module file.
+- _selector_ of a component can be any of the following:
+    1. HTML selector
+        - `selector: 'app-server'`
+        - This is used as a HTML selector:
+            - `<app-server>`
+        - This is generally preferred
+    2. Attribute selector 
+        - `selector: '[app-server]'`
+        - This is used as an attribute:
+            - `<div app-server>`
+    3. Class selector
+        - `selector: '.app-server'`
+        - This is used as a class of a HTML selector:
+            - `<div class="app-server"`
