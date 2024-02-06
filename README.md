@@ -5,6 +5,14 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
 
 ---
 
+#### File/Folder Structure
+1. **server** - Component folder
+    - Basics of _Component_ Decorator
+2. **servers** - Component folder
+    - Inline template
+    - Nested Component (_server_ component is called inside this)
+---
+
 ## Notes
 ### How Angular Works?
 -  **_main.ts_** is executed first
