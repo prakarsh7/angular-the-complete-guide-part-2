@@ -1,3 +1,10 @@
+# Angular---The-Complete-Guide-2024-Edition-Part-2
+This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition)'
+
+#### Course Link - [Angular - The Complete Guide (2024 Edition)](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
+
+---
+
 ## Notes
 ### How Angular Works?
 -  **_main.ts_** is executed first
