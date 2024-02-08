@@ -1,2 +1,15 @@
+<!-- Property Binding -->
+<!-- Here the '[disabled] is not acting as an attribute but as a property which HTML element (button) has' -->
+<!-- Updates the DOM dynamically -->
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer">
+        Add Server
+</button>
+
+<!-- String Interpolation vs Property Binding -->
+<p>String Interpolation: {{ allowNewServer }}</p>
+<p [innerText]="'Property Binding: ' + allowNewServer">Property Binding</p>
+
 <app-server></app-server>
 <app-server></app-server>
