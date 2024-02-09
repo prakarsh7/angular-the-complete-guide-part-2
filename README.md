@@ -13,6 +13,8 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
     - Inline template
     - Nested Component (_server_ component is called inside this)
     - _servers.component.html_ shows Property Binding
+    - Event Binding
+    - Two-way Binding
 ---
 
 ## Notes
@@ -65,7 +67,16 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
         - _NOTE_ - We can not and should not mix _String Interpolation_ and _Property Binding_ as it will not work and brake the code.
     2. _React to (User) Events_
         - Using Event Binding: `(event)="expression"`
+        - Eg. Instead of using _onClick_ in button tag, we can use Angular Event: `<button (click)="onCreateServer()"`
+        - We can put definition of the function directly
+        - `(input)="onUpdateServerName($event)"`, here we get details (data) about the event
+            - Eg. _target_ - HTML element where the event occurred
     3. _Two Way Binding_
         - This is a combination of both
         - `[(ngModel)]="data"`
-- _constructor()_ is a method ran at the time when that component is created by Angular. 
+            - Eg. `<input type="text" [(ngModel)]="serverName">`
+            - Here, this will update the _serverName_ value to whatever input we provide
+            - Also, since it is two-way binding if we update the value of _serverName_ somewhere else, it will update this input field as well
+        - _NOTE_ - To use _ngModel_, **FormsModule** (from @angular/forms) should be included in the _imports_ array in _app.module.ts_
+
+- _constructor()_ is a method ran at the time when that component is created by Angular.

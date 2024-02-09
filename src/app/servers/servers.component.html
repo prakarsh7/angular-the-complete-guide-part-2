@@ -1,9 +1,27 @@
+<label>Server Name</label>
+
+<!-- Passing data with event -->
+<!-- <input 
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+
+<!-- Two way data binding -->
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="serverName">
+
+<!-- <p>{{ serverName }}</p> -->
+
 <!-- Property Binding -->
 <!-- Here the '[disabled] is not acting as an attribute but as a property which HTML element (button) has' -->
 <!-- Updates the DOM dynamically -->
+<!-- Event Binding -->
 <button 
     class="btn btn-primary"
-    [disabled]="!allowNewServer">
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">
         Add Server
 </button>
 
@@ -11,5 +29,6 @@
 <p>String Interpolation: {{ allowNewServer }}</p>
 <p [innerText]="'Property Binding: ' + allowNewServer">Property Binding</p>
 
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
