@@ -80,3 +80,17 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
         - _NOTE_ - To use _ngModel_, **FormsModule** (from @angular/forms) should be included in the _imports_ array in _app.module.ts_
 
 - _constructor()_ is a method ran at the time when that component is created by Angular.
+
+- **Directives**
+    - Directives are instructions in the DOM
+    - Components are kind of such instructions in the DOM
+        - We instruct Angular to add the component where ever we use the selector of the component in HTML
+        - Components are _Directives **with** a template_
+    - We also have _Directives **without** a template_
+        - Eg. `<p appTurnGreen>Receive a green background</p>`
+        - Here, _appTurnGreen_ is a custom directive, while defining a selector for this, we define it an attribute.
+            - `selector: '[appTurnGreen]'`
+    - Some directives are offered by Angular
+        - `ngIf` - used as `<p *ngIf=>`
+            - We need a star (*) because it is a **Structural Directive**, i.e. it either adds the element or it doesn't. It adds the element by changing the DOM at runtime.
+            - We can use any condition (property, function) inside this which resolves to _true_ or _false_
