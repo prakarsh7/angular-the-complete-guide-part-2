@@ -9,12 +9,18 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
 1. **server** - Component folder
     - Basics of _Component_ Decorator
     - _servers.component.html_ shows String Interpolation
+    - Directives
+        - ngStyle
+        - ngClass
 2. **servers** - Component folder
     - Inline template
     - Nested Component (_server_ component is called inside this)
     - _servers.component.html_ shows Property Binding
     - Event Binding
     - Two-way Binding
+    - Directives
+        - ngIf else
+        - ngFor
 ---
 
 ## Notes
@@ -91,6 +97,32 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
         - Here, _appTurnGreen_ is a custom directive, while defining a selector for this, we define it an attribute.
             - `selector: '[appTurnGreen]'`
     - Some directives are offered by Angular
-        - `ngIf` - used as `<p *ngIf=>`
+        - `ngIf` - used as `<p *ngIf="condition">`
             - We need a star (*) because it is a **Structural Directive**, i.e. it either adds the element or it doesn't. It adds the element by changing the DOM at runtime.
             - We can use any condition (property, function) inside this which resolves to _true_ or _false_
+        - `ngIf` and `else`
+            - We can also use _else_ with ngIf (below points are part of same code)
+            - `<p *ngIf="condition; else noCondition">Condition is true</p>`
+            - `<ng-template #noCondition>Condition is false</ng-template>`
+            - As an alternative we can use another _ngIf_ with reverse condition
+        - `@if (condition)` - Alternative _"if"_ in Angular 17:
+            - `@if(condition) { <p>Text</p> }`
+            - `else @if(condition) { <p>Text</p> }`
+            - `@else(condition) { <p>Text</p> }`
+            - This has a better performance than _ngIf_
+        - We don't need a star for attribute directive as we needed in case of structural directive
+        - `ngStyle` - used as `<p [ngStyle]="{backgroundColor: getColor()}">Text></p>`
+            - The square brackets indicate that this is an attribute directive
+            - We have to supply a JS object as value to the attribute
+            - Allows us to dynamically apply styles element
+        - `ngClass` - used as `<p [ngClass]="{className: serverStatus === 'online'}"`
+            - Allows us to dynamically add CSS class to an element
+            - We have to supply a JS object as value to the attribute
+            - Here, the _className_ is applied to the element only if _serverStatus_ is _online_
+        - `ngFor`
+            - This is also a Structural Directive
+            - Used as `<p *ngFor="let server of servers">{{ server }}</p>`
+            - Here, _servers_ is a property name
+        - `@for(item in items; track item.id)` - Alternative _"ngFor"_ in Angular 17:
+            - `@for(item in items; track item.id){{ <li> item.title }}`
+            - This has a better performance than _ngFor_
