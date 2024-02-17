@@ -123,6 +123,8 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
             - This is also a Structural Directive
             - Used as `<p *ngFor="let server of servers">{{ server }}</p>`
             - Here, _servers_ is a property name
+            - We can get a index of the _item_:
+                - `*ngFor="let server of servers; let i = index"`
         - `@for(item in items; track item.id)` - Alternative _"ngFor"_ in Angular 17:
             - `@for(item in items; track item.id){{ <li> item.title }}`
             - This has a better performance than _ngFor_
