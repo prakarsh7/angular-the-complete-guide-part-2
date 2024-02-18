@@ -121,7 +121,7 @@ This is the 3rd repo for the course: 'Angular - The Complete Guide (2024 Edition
             - Here, the _className_ is applied to the element only if _serverStatus_ is _online_
         - `ngFor`
             - This is also a Structural Directive
-            - Used as `<p *ngFor="let server of servers">{{ server }}</p>`
+            - Used as `<p *ngFor="let server of servers; let i = index">{{ server }}</p>`
             - Here, _servers_ is a property name
             - We can get a index of the _item_:
                 - `*ngFor="let server of servers; let i = index"`
